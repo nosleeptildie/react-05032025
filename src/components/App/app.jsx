@@ -8,13 +8,13 @@ export const App = ({ title }) => {
   const [selectedRestaurantId, setSelectedRestaurantId] = useState(
     restaurants.length > 0 ? restaurants[0].id : null
   );
-  const tabs = restaurants.map(({ id: restaurantId, name }) => ({
+  const tabs = restaurants.map(({ id, name }) => ({
     title: name,
-    value: restaurantId,
-    active: restaurantId === selectedRestaurantId,
+    value: id,
+    active: id === selectedRestaurantId,
   }));
 
-  const selectedRestaurant = () =>
+  const selectedRestaurant =
     restaurants.find((restaurant) => restaurant.id === selectedRestaurantId) ??
     null;
 
@@ -24,8 +24,8 @@ export const App = ({ title }) => {
       {restaurants.length > 0 ? (
         <div className="content">
           <Tabs tabs={tabs} onClick={setSelectedRestaurantId} />
-          {Boolean(selectedRestaurant()) && (
-            <Restaurant restaurant={selectedRestaurant()} />
+          {Boolean(selectedRestaurant) && (
+            <Restaurant restaurant={selectedRestaurant} />
           )}
         </div>
       ) : (
