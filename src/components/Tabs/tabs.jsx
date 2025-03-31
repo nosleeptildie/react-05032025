@@ -5,7 +5,7 @@ export const Tabs = ({ tabs, onClick }) => {
     <div className="tabs" style={{ display: "flex" }}>
       {tabs.map((tab) => {
         return (
-          <Tab tab={tab} key={tab.value} onClick={() => onClick(tab.value)} />
+          <Tab tab={tab} key={tab.id} onClick={() => onClick(tab.id)} />
         );
       })}
     </div>

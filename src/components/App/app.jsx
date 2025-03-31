@@ -10,7 +10,7 @@ export const App = ({ title }) => {
   );
   const tabs = restaurants.map(({ id, name }) => ({
     title: name,
-    value: id,
+    id: id,
     active: id === selectedRestaurantId,
   }));
 
