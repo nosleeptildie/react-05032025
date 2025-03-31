@@ -8,15 +8,16 @@ export const App = ({ title }) => {
   const [selectedRestaurantId, setSelectedRestaurantId] = useState(
     restaurants.length > 0 ? restaurants[0].id : null
   );
+
+  const selectedRestaurant =
+    restaurants.find((restaurant) => restaurant.id === selectedRestaurantId) ??
+    null;
+
   const tabs = restaurants.map(({ id, name }) => ({
     title: name,
     id: id,
     active: id === selectedRestaurantId,
   }));
-
-  const selectedRestaurant =
-    restaurants.find((restaurant) => restaurant.id === selectedRestaurantId) ??
-    null;
 
   return (
     <Layout>
@@ -25,7 +26,10 @@ export const App = ({ title }) => {
         <div className="content">
           <Tabs tabs={tabs} onClick={setSelectedRestaurantId} />
           {Boolean(selectedRestaurant) && (
-            <Restaurant restaurant={selectedRestaurant} />
+            <Restaurant
+              key={selectedRestaurantId}
+              restaurant={selectedRestaurant}
+            />
           )}
         </div>
       ) : (
