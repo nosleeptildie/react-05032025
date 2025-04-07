@@ -35,6 +35,51 @@ export const App = ({ title }) => {
       ) : (
         <div className="empty-data">Нет данных</div>
       )}
+
+      <h1>{title}</h1>
+      {restaurants.length > 0 ? (
+        <div className="content">
+          <Tabs tabs={tabs} onClick={setSelectedRestaurantId} />
+          {Boolean(selectedRestaurant) && (
+            <Restaurant
+              key={selectedRestaurantId}
+              restaurant={selectedRestaurant}
+            />
+          )}
+        </div>
+      ) : (
+        <div className="empty-data">Нет данных</div>
+      )}
+
+      <h1>{title}</h1>
+      {restaurants.length > 0 ? (
+        <div className="content">
+          <Tabs tabs={tabs} onClick={setSelectedRestaurantId} />
+          {Boolean(selectedRestaurant) && (
+            <Restaurant
+              key={selectedRestaurantId}
+              restaurant={selectedRestaurant}
+            />
+          )}
+        </div>
+      ) : (
+        <div className="empty-data">Нет данных</div>
+      )}
+
+      <h1>{title}</h1>
+      {restaurants.length > 0 ? (
+        <div className="content">
+          <Tabs tabs={tabs} onClick={setSelectedRestaurantId} />
+          {Boolean(selectedRestaurant) && (
+            <Restaurant
+              key={selectedRestaurantId}
+              restaurant={selectedRestaurant}
+            />
+          )}
+        </div>
+      ) : (
+        <div className="empty-data">Нет данных</div>
+      )}
     </Layout>
   );
 };
