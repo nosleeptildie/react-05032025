@@ -1,19 +1,15 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 
 export const useCount = (maxCount, minCount) => {
   const [count, setCount] = useState(minCount);
 
-  const increment = () => {
-    if (count < maxCount) {
-      setCount(count + 1);
-    }
-  };
+  const increment = useCallback(() => {
+    setCount((count) => Math.min(count + 1, maxCount));
+  }, [maxCount]);
 
-  const decrement = () => {
-    if (count > minCount) {
-      setCount(count - 1);
-    }
-  };
+  const decrement = useCallback(() => {
+    setCount((count) => Math.max(count - 1, minCount));
+  }, [minCount]);
 
   return { count, increment, decrement };
 };
