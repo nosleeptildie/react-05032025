@@ -1,9 +1,9 @@
-import React from 'react';
-import FooterStyle from './footer.module.css';
+import React from "react";
+import footerStyle from "./footer.module.css";
 
 const Footer = () => {
   return (
-    <footer className={FooterStyle.footer}>
+    <footer className={footerStyle.footer}>
       {/* get year */}
       <p> React 05-03-2025</p>
     </footer>

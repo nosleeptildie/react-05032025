@@ -1,24 +1,22 @@
-import { useReducer, useCallback } from 'react';
+import { useReducer, useCallback } from "react";
 
 export const MIN_COUNT = 0;
 export const MAX_COUNT = 5;
 
-export const SET_NAME_ACTION = 'SET_NAME_ACTION';
-export const SET_TEXT_ACTION = 'SET_TEXT_ACTION';
-export const SET_RATING_INCREMENT = 'SET_RATING_INCREMENT';
-export const SET_RATING_DECREMENT = 'SET_RATING_DECREMENT';
-export const CLEAR_FORM = 'CLEAR_FORM';
+export const SET_NAME_ACTION = "SET_NAME_ACTION";
+export const SET_TEXT_ACTION = "SET_TEXT_ACTION";
+export const SET_RATING_INCREMENT = "SET_RATING_INCREMENT";
+export const SET_RATING_DECREMENT = "SET_RATING_DECREMENT";
+export const CLEAR_FORM = "CLEAR_FORM";
 
 export const DEFAULT_FORM_VALUE = {
-  name: '',
-  text: '',
+  name: "",
+  text: "",
   count: MIN_COUNT,
   rating: MIN_COUNT,
 };
 
-
 export const useForm = () => {
-
   const reducer = (state, { type, payload }) => {
     switch (type) {
       case SET_NAME_ACTION:
@@ -35,7 +33,7 @@ export const useForm = () => {
           ...state,
           rating: state.rating > MIN_COUNT ? state.rating - 1 : MIN_COUNT,
         };
-      
+
       case CLEAR_FORM:
         return DEFAULT_FORM_VALUE;
       default:
@@ -47,15 +45,15 @@ export const useForm = () => {
 
   const { name, text, rating } = form;
 
-  const setName = useCallback (
+  const setName = useCallback(
     (name) => dispatch({ type: SET_NAME_ACTION, payload: name }),
     []
   );
-  const setText = useCallback (
+  const setText = useCallback(
     (text) => dispatch({ type: SET_TEXT_ACTION, payload: text }),
     []
   );
-  const setRatingIncrement = useCallback (
+  const setRatingIncrement = useCallback(
     () => dispatch({ type: SET_RATING_INCREMENT }),
     []
   );
@@ -63,10 +61,7 @@ export const useForm = () => {
     () => dispatch({ type: SET_RATING_DECREMENT }),
     []
   );
-  const clearForm = useCallback (
-    () => dispatch({ type: CLEAR_FORM }),
-    []
-  );
+  const clearForm = useCallback(() => dispatch({ type: CLEAR_FORM }), []);
 
   return {
     name,

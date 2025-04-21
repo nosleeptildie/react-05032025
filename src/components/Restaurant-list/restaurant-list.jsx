@@ -1,7 +1,10 @@
-import ListStyle from './restaurant-list.module.css';
+import listStyle from "./restaurant-list.module.css";
 
-export const RestaurantList = ({ restaurants, onSetActiveRestaurant, activeRestaurant}) => {
-  
+export const RestaurantList = ({
+  restaurants,
+  onSetActiveRestaurant,
+  activeRestaurant,
+}) => {
   const handleActiveRestaurant = (restaurant) => {
     if (activeRestaurant.id === restaurant.id) {
       return;
@@ -10,7 +13,7 @@ export const RestaurantList = ({ restaurants, onSetActiveRestaurant, activeResta
   };
 
   return (
-    <div className={ListStyle.restList}>
+    <div className={listStyle.restList}>
       {restaurants.map((restaurant) => (
         <button
           key={restaurant.id}
@@ -19,7 +22,7 @@ export const RestaurantList = ({ restaurants, onSetActiveRestaurant, activeResta
           }}
           disabled={activeRestaurant.id === restaurant.id}
         >
-          <h3 className={ListStyle.restHeading}>{restaurant.name}</h3>
+          <h3 className={listStyle.restHeading}>{restaurant.name}</h3>
         </button>
       ))}
     </div>

@@ -1,15 +1,15 @@
-import { useCallback, useState } from 'react';
-import { ThemeContext } from './index';
+import { useCallback, useState } from "react";
+import { ThemeContext } from "./index";
 
 export const ThemeContextProvider = ({ children }) => {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState("light");
 
   const toggleTheme = useCallback(() => {
     setTheme((currentTheme) => {
-      if (currentTheme === 'dark') {
-        return 'light';
+      if (currentTheme === "dark") {
+        return "light";
       } else {
-        return 'dark';
+        return "dark";
       }
     });
   }, []);

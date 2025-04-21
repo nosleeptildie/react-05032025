@@ -1,6 +1,6 @@
-import { Counter } from '../Counter/counter';
-import { useForm } from './use-reviews-form';
-import reviewFormStyle from './reviews-form.module.css';
+import { Counter } from "../Counter/counter";
+import { useForm } from "./use-reviews-form";
+import reviewFormStyle from "./reviews-form.module.css";
 
 export const ReviewForm = () => {
   const {
@@ -16,28 +16,32 @@ export const ReviewForm = () => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submitted')
+    console.log("Form submitted");
   };
 
   return (
     <form onSubmit={handleFormSubmit}>
       <div className={reviewFormStyle.container}>
         <h4>Оставить отзыв</h4>
-        <div><span>Имя:</span></div>
+        <div>
+          <span>Имя:</span>
+        </div>
         <div>
           <input
             className={reviewFormStyle.input}
-            type='text'
+            type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
         </div>
-        <div><span>Отзыв:</span></div>
+        <div>
+          <span>Отзыв:</span>
+        </div>
         <div>
           <textarea
             className={reviewFormStyle.textarea}
-            value={text} 
-            onChange={(e) => setText(e.target.value)} 
+            value={text}
+            onChange={(e) => setText(e.target.value)}
           />
         </div>
         <div>Оценка:</div>
@@ -49,8 +53,18 @@ export const ReviewForm = () => {
           />
         </div>
         <div>
-          <button className={reviewFormStyle.clearButton} onClick={() => clearForm()}>Очистить</button>
-          <button className={reviewFormStyle.submitButton} onClick={handleFormSubmit}>Отправить</button>
+          <button
+            className={reviewFormStyle.clearButton}
+            onClick={() => clearForm()}
+          >
+            Очистить
+          </button>
+          <button
+            className={reviewFormStyle.submitButton}
+            onClick={handleFormSubmit}
+          >
+            Отправить
+          </button>
         </div>
       </div>
     </form>

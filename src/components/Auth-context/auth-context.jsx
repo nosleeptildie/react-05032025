@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { AuthContext } from './index';
+import { useState } from "react";
+import { AuthContext } from "./index";
 
 export const AuthContextProvider = ({ children }) => {
   const [auth, setAuth] = useState({ isAuthorized: false });
@@ -8,7 +8,7 @@ export const AuthContextProvider = ({ children }) => {
     setAuth((prev) => {
       return prev.isAuthorized
         ? { isAuthorized: false }
-        : { isAuthorized: true, name: 'Артем' };
+        : { isAuthorized: true, name: "Артем" };
     });
   };
 

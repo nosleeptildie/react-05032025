@@ -1,29 +1,17 @@
-import {Menu} from '../Menu/menu';
-import {Reviews} from '../Reviews/reviews';
-import RestaurantStyle from './restaurant.module.css';
+import { Menu } from "../Menu/menu";
+import { Reviews } from "../Reviews/reviews";
+import restaurantStyle from "./restaurant.module.css";
 
 export const Restaurant = ({ restaurant }) => {
+  const { name, menu, reviews } = restaurant;
 
-  const {name, menu, reviews} = restaurant;
-  
   return (
-      <div className={RestaurantStyle.restaurant}>
-        <h2 className={RestaurantStyle.heading}>{name}</h2>
+    <div className={restaurantStyle.restaurant}>
+      <h2 className={restaurantStyle.heading}>{name}</h2>
 
-        {/* if no menu or reviews throw error message  */}
+      {menu.length ? <Menu menu={menu} /> : "No menu yet"}
 
-        {menu.length ? (
-          <Menu menu={menu} />
-          ) : (
-          "No menu yet"
-        )}
-
-        {reviews.length ? (
-          <Reviews reviews={reviews} />
-        ) : (
-          "No reviews yet"
-        )}
-            
-      </div>
+      {reviews.length ? <Reviews reviews={reviews} /> : "No reviews yet"}
+    </div>
   );
 };

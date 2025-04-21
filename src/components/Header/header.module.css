@@ -1,13 +1,13 @@
 .header {
-    display: flex;
-    padding: 0.7em;
-    min-height: 1em;
-    align-items: center;
-    align-content: space-evenly;
-    justify-content: space-between;
-    border: 1px dashed #fdf8a9;
-  };
-  
-  ul li {
-    display: inline;
-  }
+  display: flex;
+  padding: 0.7em;
+  min-height: 1em;
+  align-items: center;
+  align-content: space-evenly;
+  justify-content: space-between;
+  border: 1px dashed #fdf8a9;
+}
+
+ul li {
+  display: inline;
+}

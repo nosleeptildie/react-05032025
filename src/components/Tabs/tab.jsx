@@ -1,11 +1,9 @@
-import TabStyle from './tab.module.css';
+import tabStyle from "./tab.module.css";
 
 export const TabItem = ({ children, onClick }) => {
   return (
-    <li className={TabStyle.list}>
-      <button className={TabStyle.button}
-        onClick={onClick}
-      >
+    <li className={tabStyle.list}>
+      <button className={tabStyle.button} onClick={onClick}>
         {children}
       </button>
     </li>

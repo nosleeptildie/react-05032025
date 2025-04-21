@@ -1,19 +1,18 @@
-import React from 'react';
-import { AuthButton } from '../Auth-button/auth-button';
-import { ToggleTheme } from '../Toggle-theme/toggle-theme';
+import React from "react";
+import { AuthButton } from "../Auth-button/auth-button";
+import { ToggleTheme } from "../Toggle-theme/toggle-theme";
 
-import HeaderStyle from './header.module.css';
-
+import headerStyle from "./header.module.css";
 
 const Header = () => {
   return (
     <header>
       <div>
-        <nav className={HeaderStyle.header}>
-          <a href='/'>На главную</a>
+        <nav className={headerStyle.header}>
+          <a href="/">На главную</a>
           <ToggleTheme />
           <AuthButton />
-        </nav>       
+        </nav>
       </div>
     </header>
   );

@@ -1,6 +1,6 @@
-import { use } from 'react';
-import { ThemeContext } from '../Theme-context/index';
-import { Button } from '../Button/button';
+import { use } from "react";
+import { ThemeContext } from "../Theme-context/index";
+import { Button } from "../Button/button";
 
 export const ToggleTheme = () => {
   const { theme, toggleTheme } = use(ThemeContext);
@@ -8,7 +8,7 @@ export const ToggleTheme = () => {
   return (
     <Button
       onClick={toggleTheme}
-      title={theme === 'dark' ? 'Светлая тема' : 'Темная тема'}
+      title={theme === "dark" ? "Светлая тема" : "Темная тема"}
     />
   );
 };
