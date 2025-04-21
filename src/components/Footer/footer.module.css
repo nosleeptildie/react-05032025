@@ -1,0 +1,9 @@
+.footer {
+    display: flex;
+    min-height: 100px;
+    margin-top: 1em;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed #fdf8a9;
+    border-radius: 15px;
+  };

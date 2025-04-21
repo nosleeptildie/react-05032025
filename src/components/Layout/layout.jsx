@@ -1,12 +1,19 @@
-import { ScrollBar } from "../Scroll-bar/scroll-bar";
+import React from 'react';
+import Header from '../Header/header';
+import Footer from '../Footer/footer';
+import { ScrollBar } from '../Scroll-bar/scroll-bar';
+import LayoutStyle from './layout.module.css';
 
-export const Layout = ({ children }) => {
+export const Layout = ({ title, children }) => {
   return (
-    <div>
+    <div className={LayoutStyle.layout}>
       <ScrollBar />
-      <header>Обзор ресторанов</header>
-      <section>{children}</section>
-      <footer>footer</footer>
+      <Header />
+      <main>
+        <h1>{title}</h1>
+        <section>{children}</section>
+      </main>
+      <Footer />
     </div>
   );
 };

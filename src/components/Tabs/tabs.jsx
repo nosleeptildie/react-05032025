@@ -1,4 +1,4 @@
-import { Tab } from "./Tab.jsx";
+/*import { Tab } from "./Tab.jsx";
 
 export const Tabs = ({ tabs, onClick }) => {
   return (
@@ -9,3 +9,4 @@ export const Tabs = ({ tabs, onClick }) => {
     </div>
   );
 };
+*/
