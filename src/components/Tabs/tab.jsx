@@ -1,8 +1,11 @@
-export const Tab = ({ tab, onClick }) => {
-  const { title, active } = tab;
+import tabStyle from "./tab.module.css";
+
+export const TabItem = ({ children, onClick }) => {
   return (
-    <button disabled={active} onClick={onClick}>
-      {title}
-    </button>
+    <li className={tabStyle.list}>
+      <button className={tabStyle.button} onClick={onClick}>
+        {children}
+      </button>
+    </li>
   );
 };

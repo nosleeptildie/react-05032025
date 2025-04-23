@@ -1,8 +1,9 @@
 .root {
+  top: 0;
   left: 0;
   width: 100%;
   height: 10px;
   position: fixed;
   background-color: #fff;
-  background-color: #13af13;
+  background-color: #da4edf;
 }

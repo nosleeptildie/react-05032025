@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  width: 100%;
+  padding: 0.5em;
+  min-height: 0.7em;
+  align-items: center;
+  align-content: center;
+  justify-content: left;
+  border: none;
+}
+
+.title {
+  color: #b3b1b1;
+}
